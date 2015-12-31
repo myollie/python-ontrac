@@ -13,17 +13,17 @@ A light wrapper around OnTrac's Webservice API.
 Methods
 -------------
 
-### Init ###
+### Init
 
 Params:
 
-Name | Required | Description
----- | ----- | ----
-account | true | OnTrac account username
-password | true | OnTrac account password
-production | false | Use OnTrac Production environment
+| Name | Required | Description |
+| ---- | ----- | ---- |
+| account | true | OnTrac account username |
+| password | true | OnTrac account password |
+| production | false | Use OnTrac Production environment |
 
-```
+```python
 from ontrac.service import OnTracService
 service = OnTracService('37', 'testpass', False)
 ```
@@ -34,9 +34,9 @@ Retrieve zip codes serviced by OnTrac, optionally listing those updated since la
 
 Params:
 
-Name | Required | Description
----- | ----- | ----
-last_update | false | return zips updated since
+| Name | Required | Description |
+| ---- | ----- | ---- |
+| last_update | false | return zips updated since |
 
 ```
 from datetime import datetime
