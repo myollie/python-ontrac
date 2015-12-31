@@ -1,10 +1,6 @@
 Python OnTrac API Module
 ============================
 
-:Author: Steve Roth, Side Studios
-:License: BSD
-:Status: Stable
-
 What is it?
 -----------
 
@@ -38,14 +34,14 @@ Params:
 | ---- | ----- | ---- |
 | last_update | false | return zips updated since |
 
-```
+```python
 from datetime import datetime
 service.zips(datetime.strptime('2015-01-01', '%Y-%m-%d'))
 ```
 
 Returns:
 
-```
+```python
 [
     {
         "palletizedServiced": "1",
@@ -81,7 +77,7 @@ Name | Required | Description
 ---- | ----- | ----
 shipments | true | array of shipments to send to OnTrac, in the following format:
 
-```
+```python
 {
 	'uid': 'unique id',
 	'from': {                                     # required
@@ -134,7 +130,7 @@ shipments | true | array of shipments to send to OnTrac, in the following format
 
 Example:
 
-```
+```python
 from_addr = {'name': 'Rich Person', 'addr1': '123 Rich st', 'city': 'Beverly Hills', 'state': 'CA', 'zip': '90210', 'phone': '8005551212'}
 to_addr = {'name': 'Hollywood Person', 'addr1': '456 Hollywood Bl', 'city': 'Hollywood', 'state': 'CA', 'zip': '90028', 'phone': '8005551212'}
 service.create_shipments([{'from': from_addr, 'to': to_addr, 'service': 'C', 'weight': 1}])
@@ -142,7 +138,7 @@ service.create_shipments([{'from': from_addr, 'to': to_addr, 'service': 'C', 'we
 
 Returns:
 
-```
+```python
 [
     {
         "BilledWeight": "1",
@@ -185,13 +181,13 @@ sig_format | false | Signature image format for track call
 
 Example:
 
-```
+```python
 service.shipment_details(['D10010863246611'])
 ```
 
 Returns:
 
-```
+```python
 {
     "Delivered": "false",
     "FuelCharge": "0",
@@ -205,13 +201,13 @@ Returns:
 
 Example:
 
-```
+```python
 service.shipment_details(['D10010863246611'], request_type='track')
 ```
 
 Returns:
 
-```
+```python
 {
     "Addr1": "456 HOLLYWOOD BL",
     "Addr2": None,
@@ -261,7 +257,7 @@ Name | Required | Description
 ---- | ----- | ----
 packages | true | array of packages to send to OnTrac, in the following format:
 
-```
+```python
 {
 	'uid': 'unique id',
 	'from_zip': 'postal',       # required
@@ -283,14 +279,14 @@ packages | true | array of packages to send to OnTrac, in the following format:
 
 Example:
 
-```
+```python
 package = {'from_zip': '90210', 'to_zip': '90028', 'weight': '1'}
 service.rates([package])
 ```
 
 Returns:
 
-```
+```python
 [
     {
         "COD": "0",
@@ -382,7 +378,7 @@ Name | Required | Description
 ---- | ----- | ----
 pickup_info | true | Dictionary of pickup info to send to OnTrac, in the following format:
 
-```
+```python
 {
 	'date': datetime.today(),
 	'earliest_time': '13:00:00',       # required
@@ -401,12 +397,12 @@ pickup_info | true | Dictionary of pickup info to send to OnTrac, in the followi
 
 Example:
 
-```
+```python
 service.request_pickup({'earliest_time': '14:00:00', 'latest_time': '16:00:00', 'addr1': '123 Rich st', 'city': 'Beverly Hills', 'state': 'CA', 'zip': '90210', 'dest_zip': '90028', 'phone': '8005551212', 'contact': 'Rich Person'})
 ```
 
 Returns:
 
-```
+```python
 '551733303'
 ```
