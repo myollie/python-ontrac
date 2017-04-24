@@ -185,7 +185,7 @@ class OnTracService(object):
 			('reference3', {'field': 'Reference3', 'optional': True, 'default': None}),
 			('tracking', {'field': 'Tracking', 'optional': True, 'default': None}),
 			('dimensions', {'field': 'DIM', 'optional': True, 'default': {'Length': 0, 'Width': 0, 'Height': 0}, 'method': 'convert_dim'}),
-			('label_type', {'field': 'LabelType', 'optional': True, 'default': 0, 'validate': [0, 1, 6, 7]}),
+			('label_type', {'field': 'LabelType', 'optional': True, 'default': 0, 'validate': [0, 1, 6, 7, 8, 9]}),
 			('ship_email', {'field': 'ShipEmail', 'optional': True, 'default': None}),
 			('del_email', {'field': 'DelEmail', 'optional': True, 'default': None}),
 			('ship_date', {'field': 'ShipDate', 'optional': True, 'default': datetime.today().strftime('%Y-%m-%d'), 'method': 'convert_ship_date'}),
