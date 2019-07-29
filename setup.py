@@ -25,5 +25,5 @@ setup(name='ontrac',
       classifiers=CLASSIFIERS,
       keywords=KEYWORDS,
       requires=['lxml'],
-      install_requires=['lxml>=3.4.1'],
+      install_requires=['lxml>=3.4.1, <4.4.0'],
 )
